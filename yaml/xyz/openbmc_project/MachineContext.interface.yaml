@@ -1,0 +1,28 @@
+description: >
+    An example interface originally described as part of the announcement of new
+    sd-bus interfaces at:
+        http://0pointer.net/blog/the-new-sd-bus-api-of-systemd.html
+properties:
+    - name: Model
+      type: string
+      description: >
+          The model ID of the system
+    - name: Serialnumber
+      type: string
+      description: >
+          The serial numbe of the system
+    - name: MACaddress
+      type: string
+      description: >
+          The MAC of the system
+    - name: localMACaddress
+      type: string
+      description: >
+          The local MAC of the system
+paths:
+    - instance: /xyz/openbmc_project/MachineContext
+      description: Expected path of the instance.
+
+service_names:
+    - default: xyz.openbmc_project.MachineContext
+      description: Expected service name for the instance.
