@@ -88,6 +88,21 @@ subdir('Ipmi')
 subdir('Led')
 subdir('Logging')
 subdir('MCTP')
+subdir('MachineContext')
+generated_others += custom_target(
+    'xyz/openbmc_project/MachineContext__markdown'.underscorify(),
+    input: [ '../../../yaml/xyz/openbmc_project/MachineContext.interface.yaml',  ],
+    output: [ 'MachineContext.md' ],
+    depend_files: sdbusplusplus_depfiles,
+    command: [
+        sdbuspp_gen_meson_prog, '--command', 'markdown',
+        '--output', meson.current_build_dir(),
+        '--tool', sdbusplusplus_prog,
+        '--directory', meson.current_source_dir() / '../../../yaml',
+        'xyz/openbmc_project/MachineContext',
+    ],
+)
+
 subdir('Memory')
 subdir('Metric')
 subdir('Network')
