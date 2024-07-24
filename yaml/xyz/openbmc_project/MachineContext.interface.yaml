@@ -6,19 +6,19 @@ properties:
     - name: Model
       type: string
       description: >
-          The model ID of the system
-    - name: Serialnumber
+          	Specifies a string that uniquely identifies the model of the system board. The recommended format is "manufacturer,model-number".
+    - name: SerialNumber
       type: string
       description: >
-          The serial numbe of the system
-    - name: MACaddress
+          Specifies a string representing the device's serial number.
+    - name: MACAddress
       type: string
       description: >
-          The MAC of the system
-    - name: localMACaddress
+          Specifies MAC address that was assigned to the network device described by the node containing this property.
+    - name: LocalMACAddress
       type: string
       description: >
-          The local MAC of the system
+          	Specifies the MAC address that was last used by the boot program. This property should be used in cases where the MAC address assigned to the device by the boot program is different from the local-mac-address property. This property shall be used only if the value differs from local-mac-address property value.
 paths:
     - instance: /xyz/openbmc_project/MachineContext
       description: Expected path of the instance.
