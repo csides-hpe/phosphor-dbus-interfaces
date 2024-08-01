@@ -12,11 +12,11 @@ properties:
       description: >
           Specifies a string representing the device's serial number.
     - name: MACAddress
-      type: string
+      type: array[byte]
       description: >
           Specifies MAC address that was assigned to the network device described by the node containing this property.
     - name: LocalMACAddress
-      type: string
+      type: array[byte]
       description: >
           	Specifies the MAC address that was last used by the boot program. This property should be used in cases where the MAC address assigned to the device by the boot program is different from the local-mac-address property. This property shall be used only if the value differs from local-mac-address property value.
 paths:
